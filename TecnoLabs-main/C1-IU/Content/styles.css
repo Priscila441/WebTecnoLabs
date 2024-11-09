@@ -21,20 +21,20 @@
     border-color: #ffcc00;
 }
 
-.btn-outline-secondary:hover {
-    background-color: #ffcc00;
-    color: #021947;
-}
+    .btn-outline-secondary:hover {
+        background-color: #ffcc00;
+        color: #021947;
+    }
 
 .btn-outline-primary {
     color: #00ccff;
     border-color: #00ccff;
 }
 
-.btn-outline-primary:hover {
-    background-color: #00ccff;
-    color: #021947;
-}
+    .btn-outline-primary:hover {
+        background-color: #00ccff;
+        color: #021947;
+    }
 
 .mid-image {
     background-image: url('images/Sale30.png');
@@ -66,74 +66,74 @@
     justify-content: space-between;
 }
 
-.sidebar .category-links {
-    background-color: #323449;
-    width: 145px;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
+    .sidebar .category-links {
+        background-color: #323449;
+        width: 145px;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-.sidebar a {
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 10px;
-}
+    .sidebar a {
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        padding: 0.75rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-family: 'Roboto', sans-serif;
+        padding-left: 10px;
+    }
 
-.sidebar a:hover {
-    background-color: #444;
-}
+        .sidebar a:hover {
+            background-color: #444;
+        }
 
-.sidebar i {
-    margin-right: 10px;
-}
+    .sidebar i {
+        margin-right: 10px;
+    }
 
-/* Imagen adicional */
-.sidebar .extra-image {
-    margin-top: 8rem;
-    display: block;
-    width: 70%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5rem;
-    border-radius: 20px;
-}
+    /* Imagen adicional */
+    .sidebar .extra-image {
+        margin-top: 8rem;
+        display: block;
+        width: 70%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+        border-radius: 20px;
+    }
 
-/* Botón de salida modificado */
-.sidebar .btn-exit {
-    background-color: #ff6f61;
-    color: white;
-    width: 120px;
-    padding: 0.5rem;
-    border-radius: 25px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s ease;
-}
+    /* Botón de salida modificado */
+    .sidebar .btn-exit {
+        background-color: #ff6f61;
+        color: white;
+        width: 120px;
+        padding: 0.5rem;
+        border-radius: 25px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        transition: background-color 0.3s ease;
+    }
 
-.sidebar .btn-exit i {
-    margin-right: 8px;
-    font-size: 1.2rem;
-}
+        .sidebar .btn-exit i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
 
-.sidebar .btn-exit:hover {
-    background-color: #e55d4f;
-}
+        .sidebar .btn-exit:hover {
+            background-color: #e55d4f;
+        }
 
 .content-container {
     margin-left: 10px;
@@ -170,12 +170,12 @@
     width: 39%;
 }
 
-.middle-images img {
-    width: 100%;
-    height: auto;
-    max-height: 170px;
-    border-radius: 25px;
-}
+    .middle-images img {
+        width: 100%;
+        height: auto;
+        max-height: 170px;
+        border-radius: 25px;
+    }
 
 .bottom-images {
     display: flex;
@@ -186,20 +186,20 @@
     justify-content: space-between;
 }
 
-.bottom-images img {
-    width: 23%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 10px;
-}
+    .bottom-images img {
+        width: 23%;
+        height: auto;
+        max-height: 200px;
+        border-radius: 10px;
+    }
 
-.bottom-images img:last-child {
-    margin-left: -100;
-    width: 30%;
-    height: auto;
-    max-height: 190px;
-    border-radius: 15px;
-}
+        .bottom-images img:last-child {
+            margin-left: -100;
+            width: 30%;
+            height: auto;
+            max-height: 190px;
+            border-radius: 15px;
+        }
 
 .middle-images img:nth-child(2) {
     margin-left: auto;

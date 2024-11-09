@@ -6,221 +6,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Buscar Productos</title>
-    
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    
-    <style>
-        .navbar {
-            background-color: #021947;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar .navbar-brand, .navbar .nav-link, .navbar .form-control {
-            color: #FFFFFF !important;
-            font-weight: bold;
-        }
-
-        .search-bar {
-            width: 350px;
-            font-size: 0.9rem;
-            background-color: #3D193E;
-            color: #FFFFFF;
-            border-radius: 15px;
-        }
-
-        .btn-outline-secondary {
-            color: #ffcc00;
-            border-color: #ffcc00;
-        }
-        
-        .btn-outline-secondary:hover {
-            background-color: #ffcc00;
-            color: #021947;
-        }
-        
-        .btn-outline-primary {
-            color: #00ccff;
-            border-color: #00ccff;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #00ccff;
-            color: #021947;
-        }
-
-        .mid-image {
-            background-image: url('images/Sale30.png');
-            width: 120px;
-            height: 60px;
-            margin: 0 100px;
-            border-radius: 20px;
-        }
-
-        .navbar-brand img {
-            width: 150px;
-            height: 50px;
-            border-radius: 5px;
-            padding-left: 10px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: 75px;
-            left: 0;
-            width: 150px;
-            height: calc(100vh - 70px);
-            background-color: #242424;
-            padding-top: 1rem;
-            color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .sidebar .category-links {
-            background-color: #323449; 
-            width: 145px;
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .sidebar a {
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            padding: 0.75rem;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-family: 'Roboto', sans-serif;
-            padding-left: 10px;
-        }
-
-        .sidebar a:hover {
-            background-color: #444;
-        }
-
-        .sidebar i {
-            margin-right: 10px;
-        }
-
-        /* Imagen adicional */
-        .sidebar .extra-image {
-            margin-top: 8rem;
-            display: block;
-            width: 70%;
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0.5rem;
-            border-radius: 20px;
-        }
-
-        /* Botón de salida modificado */
-        .sidebar .btn-exit {
-            background-color: #ff6f61;
-            color: white;
-            width: 120px;
-            padding: 0.5rem;
-            border-radius: 25px;
-            text-align: center;
-            cursor: pointer;
-            font-size: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidebar .btn-exit i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-
-        .sidebar .btn-exit:hover {
-            background-color: #e55d4f;
-        }
-
-        .content-container {
-            margin-left: 10px;
-            padding: 1rem;
-        }
-
-        /* Contenedor para imagen promocional alineada a la esquina superior derecha */
-        .promo-container {
-            position: absolute;
-            top: 75px;
-            left: 150px;
-            right: 0;
-            padding: 10px;
-            border-radius: 0px;
-            background-color: #470224;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .top-image img {
-            width: 192%;
-            max-height: 170px;
-            height: auto;
-            border-radius: 15px;
-            margin-left: -46%;
-        }
-
-        .middle-images {
-            display: flex;
-            gap: 15px;
-            width: 39%;
-        }
-
-        .middle-images img {
-            width: 100%;
-            height: auto;
-            max-height: 170px;
-            border-radius: 25px;
-        }
-
-        .bottom-images {
-            display: flex;
-            gap: 10px;
-            margin-top: 0px;
-            max-height: 190px;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        .bottom-images img {
-            width: 23%;
-            height: auto;
-            max-height: 200px;
-            border-radius: 10px;
-        }
-
-        .bottom-images img:last-child {
-            margin-left: -100;
-            width: 30%;
-            height: auto;
-            max-height: 190px;
-            border-radius: 15px;
-        }
-
-        .middle-images img:nth-child(2) {
-            margin-left: auto;
-        }
-    </style>
-    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -228,20 +18,20 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="padding: 0.5rem 1rem;">
             <div class="container-fluid d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Default.aspx">
                     <img src="images/logotecnolabs.jpg" alt="Logo" class="d-inline-block align-top">
                 </a>
                 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <form class="d-flex" action="Buscar.aspx" method="get">
-                        <input class="form-control me-2 search-bar" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="query">
-                        <button class="btn btn-primary me-2" type="submit">Buscar</button>
-                        <img src="images/Sale30.png" alt="Mid Image" class="mid-image">
-                    </form>
+					<div class="d-flex" action="Buscar.aspx">
+						<input class="form-control me-2 search-bar" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="query">
+						<button class="btn btn-primary me-2" type="submit" formaction="Buscar.aspx">Buscar</button>
+						<img src="images/Sale30.png" alt="Mid Image" class="mid-image">
+					</div>
                 </div>
                 
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-secondary me-2" href="#" title="Carrito">
+                    <a class="btn btn-outline-secondary me-2" href="Carrito.aspx" title="Carrito">
                         <i class="bi bi-cart"></i>
                     </a>
                     <a class="btn btn-outline-primary" href="contacto.aspx">Contacto</a>
@@ -251,10 +41,10 @@
         
         <div class="sidebar">
             <div class="category-links">
-                <a href="#"><i class="bi bi-person-circle"></i> Administrador</a>
-                <a href="#"><i class="bi bi-phone"></i> Celulares</a>
-                <a href="#"><i class="bi bi-laptop"></i> Notebooks</a>
-                <a href="#"><i class="bi bi-tablet"></i> Tablets</a>
+                <a href="Acceso.aspx"><i class="bi bi-person-circle"></i> Administrador</a>
+                <a href="Celulares.aspx"><i class="bi bi-phone"></i> Celulares</a>
+                <a href="Notebooks.aspx"><i class="bi bi-laptop"></i> Notebooks</a>
+                <a href="Tablets.aspx"><i class="bi bi-tablet"></i> Tablets</a>
             </div>
             
             <img src="images/Salemas.png" alt="Imagen adicional" class="extra-image">
@@ -263,25 +53,7 @@
             </button>
         </div>
 
-        <div class="promo-container">
-            <div class="top-image">
-                <img src="images/adelantate.png" alt="Imagen promocional principal">
-            </div>
-
-            <div class="middle-images">
-                <img src="images/envio.jpg" alt="Imagen Envío">
-                <img src="images/cuotas.png" alt="Imagen Cuotas">
-            </div>
-
-            <div class="bottom-images">
-                <img src="images/compu.png" alt="Imagen Notebooks">
-                <img src="images/moto.jpg" alt="Imagen Celulares">
-                <img src="images/asus.png" alt="Imagen computadora">
-                <img src="images/iphone.png" alt="Imagen iphone">
-            </div>
-        </div>
-        
-        <div class="content-container">
+    
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
