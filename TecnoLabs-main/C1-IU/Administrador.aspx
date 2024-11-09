@@ -55,6 +55,7 @@
             font-size: 14px; /* Reducir tamaño de las etiquetas */
         }
     </style>
+    
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -66,6 +67,7 @@
         <div class="card">
             <h4 class="card-title text-center">Detalles del Producto</h4>
             <div class="card-body">
+                <%--<asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>--%>
                 <div class="mb-3">
                     <asp:Label ID="LabelMarca" runat="server" Text="Marca" CssClass="form-label fw-bold"></asp:Label>
                     <asp:TextBox ID="TxtMarca" runat="server" CssClass="form-control"></asp:TextBox>
@@ -80,7 +82,13 @@
                 </div>
                 <div class="mb-3">
                     <asp:Label ID="LabelCategoria" runat="server" Text="Categoría" CssClass="form-label fw-bold"></asp:Label>
-                    <asp:TextBox ID="TxtCategoria" runat="server" CssClass="form-control"></asp:TextBox>
+                    <%--<asp:TextBox ID="TxtCategoria" runat="server" CssClass="form-control"></asp:TextBox>--%>
+					<asp:DropDownList ID="dropCategoria" runat="server" CssClass="dropdown-item" BackColor="White" Width="200px">
+                        <asp:ListItem Selected="True">Seleccionar</asp:ListItem>
+						<asp:ListItem>Celulares</asp:ListItem>
+						<asp:ListItem>Tablets</asp:ListItem>
+						<asp:ListItem>Notebooks</asp:ListItem>
+					</asp:DropDownList>
                 </div>
                 <div class="mb-3">
                     <asp:Label ID="LabelStock" runat="server" Text="Stock" CssClass="form-label fw-bold"></asp:Label>
@@ -88,11 +96,12 @@
                 </div>
                 <!-- Botones de acción -->
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
-                    <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary me-md-2" />
-                    <asp:Button ID="BtnEditar" runat="server" Text="Editar" CssClass="btn btn-warning me-md-2" />
-                    <asp:Button ID="BntEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger me-md-2"/>
-                    <asp:Button ID="BntGuardar" runat="server" Text="Guardar" CssClass="btn btn-success me-md-2"/>
-                    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" />
+                    <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary me-md-2" OnClick="BtnAgregar_Click" />
+                    <asp:Button ID="BtnEditar" runat="server" Text="Editar" CssClass="btn btn-warning me-md-2" OnClick="BtnEditar_Click" Enabled="false"/>
+                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger me-md-2" OnClick="BntEliminar_Click" Enabled="false"/>
+                    <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" CssClass="btn btn-success me-md-2" OnClick="BntGuardar_Click" Enabled="false"/>
+                    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="BtnCancelar_Click"/>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" Style="display: none;" CssClass="btn btn-custom btn-sm"/>
                 </div>
             </div>
         </div>
@@ -100,7 +109,7 @@
         <!-- Cuadro de búsqueda debajo de los botones -->
         <div class="search-container">
             <asp:TextBox ID="TxtBuscar" runat="server" CssClass="form-control" Placeholder="Buscar producto..."></asp:TextBox>
-            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary mt-2 w-100" />
+            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary mt-2 w-100" OnClick="BtnBuscar_Click"/>
         </div>
 
         <!-- Tabla de productos -->
@@ -110,7 +119,7 @@
                     <asp:BoundField DataField="IdProducto" HeaderText="IdProducto"/>
                     <asp:BoundField DataField="Marca" HeaderText="Marca" />
                     <asp:BoundField DataField="Modelo" HeaderText="Modelo" />
-                    <asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
+                    <asp:BoundField DataField="Precio" HeaderText="Precio"/>
                     <asp:BoundField DataField="IdCategoria" HeaderText="IdCategoría" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock" />
                 </Columns>

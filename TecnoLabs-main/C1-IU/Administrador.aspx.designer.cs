@@ -78,13 +78,13 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Label LabelCategoria;
 
 		/// <summary>
-		/// Control TxtCategoria.
+		/// Control dropCategoria.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TxtCategoria;
+		protected global::System.Web.UI.WebControls.DropDownList dropCategoria;
 
 		/// <summary>
 		/// Control LabelStock.
@@ -123,22 +123,22 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Button BtnEditar;
 
 		/// <summary>
-		/// Control BntEliminar.
+		/// Control BtnEliminar.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button BntEliminar;
+		protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
 		/// <summary>
-		/// Control BntGuardar.
+		/// Control BtnGuardar.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button BntGuardar;
+		protected global::System.Web.UI.WebControls.Button BtnGuardar;
 
 		/// <summary>
 		/// Control BtnCancelar.
@@ -148,6 +148,15 @@ namespace C1_IU
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button BtnCancelar;
+
+		/// <summary>
+		/// Control btnAceptar.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnAceptar;
 
 		/// <summary>
 		/// Control TxtBuscar.
