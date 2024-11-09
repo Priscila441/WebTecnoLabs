@@ -105,19 +105,19 @@
 
         <!-- Tabla de productos -->
         <div class="grid-container">
-            <%--<asp:GridView ID="GridViewProductos" runat="server" CssClass="table table-bordered table-hover" CellPadding="3" GridLines="None" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewProductos_SelectedIndexChanged">
+            <asp:GridView ID="gvProductos" runat="server" CssClass="table table-bordered table-hover" CellPadding="3" GridLines="None" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="ID"/>
+                    <asp:BoundField DataField="IdProducto" HeaderText="IdProducto"/>
                     <asp:BoundField DataField="Marca" HeaderText="Marca" />
                     <asp:BoundField DataField="Modelo" HeaderText="Modelo" />
                     <asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
-                    <asp:BoundField DataField="Categoria" HeaderText="Categoría" />
+                    <asp:BoundField DataField="IdCategoria" HeaderText="IdCategoría" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock" />
                 </Columns>
                 <HeaderStyle CssClass="table-primary" />
                 <RowStyle CssClass="table-light" />
                 <SelectedRowStyle CssClass="table-warning" />
-            </asp:GridView>--%>
+            </asp:GridView>
         </div>
     </div>
 </asp:Content>

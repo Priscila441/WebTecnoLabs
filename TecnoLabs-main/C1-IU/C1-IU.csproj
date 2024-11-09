@@ -137,6 +137,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -162,6 +163,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C2-BLL\C2-BLL.csproj">
+      <Project>{99967145-e32b-4cde-a79c-98a112efe0f7}</Project>
+      <Name>C2-BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\C4-ENTIDADES\C4-ENTIDAD.csproj">
+      <Project>{52e0dea0-9ce2-4ffc-9e9b-4021b0331b9f}</Project>
+      <Name>C4-ENTIDAD</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

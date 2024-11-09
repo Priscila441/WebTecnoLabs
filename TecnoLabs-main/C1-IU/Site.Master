@@ -18,20 +18,20 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="padding: 0.5rem 1rem;">
             <div class="container-fluid d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Default.aspx">
                     <img src="images/logotecnolabs.jpg" alt="Logo" class="d-inline-block align-top">
                 </a>
                 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <form class="d-flex" action="Buscar.aspx" method="get">
-                        <input class="form-control me-2 search-bar" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="query">
-                        <button class="btn btn-primary me-2" type="submit">Buscar</button>
-                        <img src="images/Sale30.png" alt="Mid Image" class="mid-image">
-                    </form>
+					<div class="d-flex" action="Buscar.aspx">
+						<input class="form-control me-2 search-bar" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="query">
+						<button class="btn btn-primary me-2" type="submit" formaction="Buscar.aspx">Buscar</button>
+						<img src="images/Sale30.png" alt="Mid Image" class="mid-image">
+					</div>
                 </div>
                 
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-secondary me-2" href="#" title="Carrito">
+                    <a class="btn btn-outline-secondary me-2" href="Carrito.aspx" title="Carrito">
                         <i class="bi bi-cart"></i>
                     </a>
                     <a class="btn btn-outline-primary" href="contacto.aspx">Contacto</a>
@@ -41,10 +41,10 @@
         
         <div class="sidebar">
             <div class="category-links">
-                <a href="#"><i class="bi bi-person-circle"></i> Administrador</a>
-                <a href="#"><i class="bi bi-phone"></i> Celulares</a>
-                <a href="#"><i class="bi bi-laptop"></i> Notebooks</a>
-                <a href="#"><i class="bi bi-tablet"></i> Tablets</a>
+                <a href="Acceso.aspx"><i class="bi bi-person-circle"></i> Administrador</a>
+                <a href="Celulares.aspx"><i class="bi bi-phone"></i> Celulares</a>
+                <a href="Notebooks.aspx"><i class="bi bi-laptop"></i> Notebooks</a>
+                <a href="Tablets.aspx"><i class="bi bi-tablet"></i> Tablets</a>
             </div>
             
             <img src="images/Salemas.png" alt="Imagen adicional" class="extra-image">
