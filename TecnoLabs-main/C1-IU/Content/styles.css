@@ -1,0 +1,249 @@
+﻿.navbar {
+    background-color: #021947;
+    font-family: Arial, sans-serif;
+}
+
+.navbar .navbar-brand, .navbar .nav-link, .navbar .form-control {
+    color: #FFFFFF !important;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 350px;
+    font-size: 0.9rem;
+    background-color: #3D193E;
+    color: #FFFFFF;
+    border-radius: 15px;
+}
+
+.btn-outline-secondary {
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ffcc00;
+    color: #021947;
+}
+
+.btn-outline-primary {
+    color: #00ccff;
+    border-color: #00ccff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #00ccff;
+    color: #021947;
+}
+
+.mid-image {
+    background-image: url('images/Sale30.png');
+    width: 120px;
+    height: 60px;
+    margin: 0 100px;
+    border-radius: 20px;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 150px;
+    height: calc(100vh - 70px);
+    background-color: #242424;
+    padding-top: 1rem;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .category-links {
+    background-color: #323449;
+    width: 145px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #444;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+/* Imagen adicional */
+.sidebar .extra-image {
+    margin-top: 8rem;
+    display: block;
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+}
+
+/* Botón de salida modificado */
+.sidebar .btn-exit {
+    background-color: #ff6f61;
+    color: white;
+    width: 120px;
+    padding: 0.5rem;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .btn-exit i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.sidebar .btn-exit:hover {
+    background-color: #e55d4f;
+}
+
+.content-container {
+    margin-left: 10px;
+    padding: 1rem;
+}
+
+/* Contenedor para imagen promocional alineada a la esquina superior derecha */
+.promo-container {
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    right: 0;
+    padding: 10px;
+    border-radius: 0px;
+    background-color: #470224;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-image img {
+    width: 192%;
+    max-height: 170px;
+    height: auto;
+    border-radius: 15px;
+    margin-left: -46%;
+}
+
+.middle-images {
+    display: flex;
+    gap: 15px;
+    width: 39%;
+}
+
+.middle-images img {
+    width: 100%;
+    height: auto;
+    max-height: 170px;
+    border-radius: 25px;
+}
+
+.bottom-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 0px;
+    max-height: 190px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bottom-images img {
+    width: 23%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
+.bottom-images img:last-child {
+    margin-left: -100;
+    width: 30%;
+    height: auto;
+    max-height: 190px;
+    border-radius: 15px;
+}
+
+.middle-images img:nth-child(2) {
+    margin-left: auto;
+}
+
+body {
+    background-color: #470224; /* Color de fondo de toda la página */
+}
+
+.formulario-acceso {
+    max-width: 400px;
+    margin: 100px auto;
+    margin-top: 75px; /* Espacio para la barra de navegación */
+    padding: 20px;
+    background-color: #470224; /* Color de fondo del formulario */
+    border: 2px solid #ffffff; /* Color del borde */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* Color de la fuente */
+}
+
+.formulario-acceso .form-label {
+    color: #ffffff; /* Color de la fuente */
+}
+
+.formulario-acceso .form-control {
+    color: #000000; /* Color del texto dentro del campo de entrada */
+    background-color: #f8f9fa; /* Fondo blanco para los campos de entrada */
+}
+
+.formulario-acceso .form-control::placeholder {
+    color: #cccccc; /* Color de los placeholders */
+}
+
+.formulario-acceso .btn-primary {
+    background-color: #ffcc00; /* Color de fondo del botón */
+    border-color: #ffcc00; /* Color del borde del botón */
+    color: #021947; /* Color de la fuente del botón */
+}
+
+.formulario-acceso .btn-primary:hover {
+    background-color: #ffcc99; /* Color de fondo del botón al pasar el cursor */
+    border-color: #ffcc99; /* Color del borde del botón al pasar el cursor */
+    color: #021947; /* Color de la fuente del botón al pasar el cursor */
+}
+
+
