@@ -182,8 +182,8 @@
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             position: absolute; /* Agregar posición absoluta */
-            right: 41; /* Colocarlo hacia el borde derecho */
-            top: 62%; /* Ajusta el valor según sea necesario para que quede a la altura correcta */
+            right: 55px; /* Colocarlo hacia el borde derecho */
+            top: 55%; /* Ajusta el valor según sea necesario para que quede a la altura correcta */
         }
 
         .payment-method-container h3 {
@@ -357,10 +357,10 @@
           /* Estilo del cuadro de registro del cliente */
         .client-registration-box {
             position: absolute;
-            top: 307px; /* Ajusta la posición vertical según sea necesario */
-            left: 84%;
+            top: 265px; /* Ajusta la posición vertical según sea necesario */
+            left: 86%;
             transform: translateX(-50%);
-            width: 25%; /* Tamaño del cuadro reducido */
+            width: 20%; /* Tamaño del cuadro reducido */
             padding: 10px;
             background-color: #FFC0C0;
             border-radius: 10px;
@@ -408,7 +408,6 @@
     </style>
 	<script type="text/javascript">
 		function mostrarRegistro() {
-			// Obtén los elementos de los paneles por sus IDs
 			document.getElementById('<%= panelRegistroRapido.ClientID %>').style.display = 'none';
 			document.getElementById('<%= pnlRegister.ClientID %>').style.display = 'block';
 		}
@@ -491,33 +490,42 @@
 	<!-- Cuadro de Inicio de Sesión -->
 	<asp:Panel ID="panelRegistroRapido" runat="server" CssClass="login-box" Visible="false">
 		<h3>Inicio de Sesión</h3>
+        <asp:Literal ID="LiteralInicioMessage" runat="server"></asp:Literal>
 		<asp:TextBox ID="txtEmail" runat="server" Placeholder="Email"></asp:TextBox>
 		<asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Placeholder="Contraseña"></asp:TextBox>
 		<label class="forgot-password">¿Te olvidaste tu contraseña?</label>
-		<asp:Button ID="btnLogin" runat="server" CssClass="login-button" Text="Iniciar Sesión" />
+		<asp:Button ID="btnLogin" runat="server" CssClass="login-button" Text="Iniciar Sesión" OnClick="btnLogin_Click"/>
 		<label class="register">¿No tienes cuenta? <a href="javascript:void(0);" onclick="mostrarRegistro()">Regístrate</a></label>
 	</asp:Panel>
 
 	<!-- Cuadro de Registro -->
 	<asp:Panel ID="pnlRegister" runat="server" CssClass="client-registration-box" Visible="true" style="display: none;">
 		<h3>Registro del Cliente</h3>
-		<asp:TextBox ID="txtName" runat="server" Placeholder="Nombre"></asp:TextBox>
-		<asp:TextBox ID="txtLastname" runat="server" Placeholder="Apellido"></asp:TextBox>
-		<asp:TextBox ID="txtAge" runat="server" Placeholder="Edad"></asp:TextBox>
-		<asp:TextBox ID="txtEmailRegister" runat="server" Placeholder="Email"></asp:TextBox>
-		<asp:TextBox ID="txtAddress" runat="server" Placeholder="Dirección"></asp:TextBox>
-		<asp:TextBox ID="txtPaymentMethod" runat="server" Placeholder="Medio de Pago"></asp:TextBox>
-		<asp:Button ID="btnRegister" runat="server" CssClass="register-button" Text="Regístrate" />
+        <asp:Literal ID="LiteralRegistroMessage" runat="server"></asp:Literal>
+		<asp:TextBox ID="txtNombre" runat="server" Placeholder="Nombre"></asp:TextBox>
+		<asp:TextBox ID="txtApellido" runat="server" Placeholder="Apellido"></asp:TextBox>
+		<asp:TextBox ID="txtEdad" runat="server" Placeholder="Edad"></asp:TextBox>
+		<asp:TextBox ID="txtEmailRegistro" runat="server" Placeholder="Email"></asp:TextBox>
+		<asp:TextBox ID="txtDireccion" runat="server" Placeholder="Dirección"></asp:TextBox>
+		<asp:Button ID="btnRegister" runat="server" CssClass="register-button" Text="Regístrate" OnClick="btnRegister_Click"/>
 	</asp:Panel>
 
 
 	<!-- Cuadro de selección de método de pago -->
 	<asp:Panel ID="panelConfirmarPago" runat="server" CssClass="payment-method-container" Visible="false">
 		<h3>Seleccione un Método de Pago</h3>
-		<asp:TextBox ID="txtPaymentMethodSelection" runat="server" Placeholder="Ingrese su método de pago"></asp:TextBox>
+		<%--<asp:TextBox ID="txtPaymentMethodSelection" runat="server" Placeholder="Ingrese su método de pago"></asp:TextBox>--%>
+        <asp:DropDownList ID="dropMetodoPago" runat="server" CssClass="dropdown-item" BackColor="White">
+			<asp:ListItem Selected="True">Seleccionar</asp:ListItem>
+			<asp:ListItem>Tarjeta de credito</asp:ListItem>
+			<asp:ListItem>Tarjeta de debito</asp:ListItem>
+			<asp:ListItem>PayPal</asp:ListItem>
+			<asp:ListItem>Apple Pay</asp:ListItem>
+			<asp:ListItem>Google Pay</asp:ListItem>
+		</asp:DropDownList>
 		<div class="payment-method-buttons">
-			<asp:Button ID="btnPay" runat="server" CssClass="pay-button" Text="Pagar" />
-			<asp:Button ID="btnCancelPayment" runat="server" CssClass="cancel-button" Text="Cancelar" />
+			<asp:Button ID="btnPay" runat="server" CssClass="pay-button" Text="Pagar" OnClick="btnPay_Click"/>
+			<asp:Button ID="btnCancelPayment" runat="server" CssClass="cancel-button" Text="Cancelar" OnClick="btnCancelPayment_Click"/>
 		</div>
 	</asp:Panel>
 

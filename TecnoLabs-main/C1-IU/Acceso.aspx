@@ -3,38 +3,34 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
     <style>
         body {
-            background-color: #470224; /* Color de fondo de toda la página */
+            background-color: #470224;
         }
 
-        /* Contenedor para los formularios de acceso y registro */
         .contenedor-formularios {
             display: flex;
-            justify-content: center; /* Alineación al centro */
-            align-items: flex-start; /* Alineación al inicio */
-            gap: 20px; /* Espacio entre formularios */
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
             margin-top: 10px;
         }
 
-        /* Estilo base del formulario */
         .formulario {
             max-width: 400px;
             padding: 20px;
-            background-color: #650338; /* Fondo del formulario */
+            background-color: #650338;
             border-radius: 8px;
         }
 
-        /* Estilo para los TextBox */
         .formulario .form-control {
-            background-color: #4DAB8C; /* Fondo de los TextBox */
-            color: #FFFFFF; /* Color del texto dentro del TextBox */
-            border: 1px solid #650338; /* Borde de los TextBox */
+            background-color: #4DAB8C;
+            color: #FFFFFF;
+            border: 1px solid #650338;
             border-radius: 4px;
-            width: 100%; /* Asegura que los TextBox ocupen todo el ancho del formulario */
+            width: 100%;
         }
 
-        /* Estilo base para el botón de acceso */
         .btn-acceder, .btn-registrarse {
-            background-color: #8F244D; /* Color de fondo más suave para acceso */
+            background-color: #8F244D;
             color: #fff;
             width: 200px;
             font-size: 14px;
@@ -43,17 +39,15 @@
             border-radius: 4px;
             transition: all 0.3s ease;
             display: block;
-            margin: 10px auto; /* Centra el botón dentro del formulario */
+            margin: 10px auto;
         }
 
-        /* Efecto hover para todos los botones */
         .btn-acceder:hover, .btn-registrarse:hover {
-            background-color: #5A8FBC; /* Nuevo color de fondo al pasar el ratón */
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-            transform: scale(1.05); /* Aumento de tamaño al pasar el ratón */
+            background-color: #5A8FBC;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
         }
 
-        /* Estilo para los títulos */
         .titulo {
             color: #FFFFFF;
             font-size: 30px;
@@ -63,177 +57,117 @@
             font-family: Script MT;
         }
 
-        /* Estilo para los botones con iconos */
-        .btn-icon i {
-            margin-right: 10px;
-        }
-
-        /* Contenedor de los botones */
-        .contenedor-botones {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        /* Estilo para la imagen en el borde inferior */
         .footer-image {
-            width: 100%; /* Ajusta el ancho al 100% del contenedor */
-            height: 200px; /* Altura ajustable de la imagen */
-            background-image: url('images/motorola1.jpg'); /* Reemplaza con la ruta de tu imagen */
-            background-size: cover; /* Hace que la imagen cubra todo el área */
-            background-position: center; /* Centra la imagen */
-            margin-top: 30px; /* Espacio superior */
-            position: relative; /* Para permitir posicionamiento absoluto de los elementos dentro */
-        }
-
-        /* Contenedor del botón "Volver" */
-        .btn-volver {
+            width: 89%;
+            height: 150px;
+            background-image: url('images/motorola1.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: 10px;
             position: absolute;
-            right: 10px; /* Mueve el botón hacia el borde derecho */
-            bottom: 20px; /* Colócalo cerca de la parte inferior */
-            background-color: #8F244D;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            right: 0px;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 45px;
+            animation: move-forward-backward 3s ease-in-out infinite;
         }
 
-        /* Efecto hover para el botón "Volver" */
-        .btn-volver:hover {
-            background-color: #5A8FBC;
-            transform: scale(1.1);
-        }
-                 /* Estilo para la imagen en el borde inferior */
-        .footer-image {
-            width: 89%; /* La imagen ocupará todo el ancho de la pantalla */
-            height: 150px; /* Ajusta la altura de la imagen (más pequeña) */
-            background-image: url('images/motorola1.jpg'); /* Ruta correcta de la imagen */
-            background-size: cover; /* La imagen cubrirá todo el área sin distorsionarse */
-            background-position: center; /* Centra la imagen */
-            margin-top: 10px; /* Espacio superior */
-            position: absolute; /* Para permitir posicionamiento absoluto */
-            right: 0px; /* Coloca la imagen a la derecha */
-            bottom: 0; /* Coloca la imagen en el borde inferior */
-            z-index: -1; /* Asegura que la imagen quede detrás del contenido */
-            border-radius: 45px; /* Bordes redondeados, si deseas mantenerlos */
-        }
-
-        /* Contenedor del botón "Volver" */
-        .btn-volver {
-            position: absolute;
-            right: 10px; /* Mueve el botón hacia el borde derecho */
-            bottom: 20px; /* Colócalo cerca de la parte inferior */
-            background-color: #8F244D;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1; /* Asegura que el botón esté sobre la imagen */
-        }
-
-        /* Efecto hover para el botón "Volver" */
-        .btn-volver:hover {
-            background-color: #5A8FBC;
-            transform: scale(1.1);
-        }
-        /* Estilo para la imagen en el borde inferior */
-        .footer-image {
-            width: 89%; /* La imagen ocupará todo el ancho de la pantalla */
-            height: 150px; /* Ajusta la altura de la imagen */
-            background-image: url('images/motorola1.jpg'); /* Ruta correcta de la imagen */
-            background-size: cover; /* La imagen cubrirá todo el área sin distorsionarse */
-            background-position: center; /* Centra la imagen */
-            margin-top: 10px; /* Espacio superior */
-            position: absolute; /* Para permitir posicionamiento absoluto */
-            right: 0px; /* Coloca la imagen a la derecha */
-            bottom: 0; /* Coloca la imagen en el borde inferior */
-            z-index: -1; /* Asegura que la imagen quede detrás del contenido */
-            border-radius: 45px; /* Bordes redondeados */
-            animation: move-forward-backward 3s ease-in-out infinite; /* Animación de movimiento */
-        }
-
-        /* Definición de la animación de "ir y volver" */
         @keyframes move-forward-backward {
-            0% {
-                transform: translateY(0); /* Posición inicial */
-            }
-            50% {
-                transform: translateY(-10px); /* Movimiento hacia arriba */
-            }
-            100% {
-                transform: translateY(0); /* Vuelve a la posición original */
-            }
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .btn-volver {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            background-color: #8F244D;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .btn-volver:hover {
+            background-color: #5A8FBC;
+            transform: scale(1.1);
         }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <!-- Contenedor de botones con iconos -->
-   <div class="contenedor-botones">
-       <!-- Botón Administrador -->
-       <button class="btn-icon btn-acceder"> <!-- Aplica la clase btn-acceder -->
-           <i class="fas fa-user-shield"></i> Administrador
-       </button>
+    <!-- Contenedor de botones con iconos -->
+<div class="contenedor-botones">
+    <!-- Botón Administrador -->
+    <asp:Button ID="btnAdmin" CssClass="btn-icon btn-acceder" runat="server" Text="Administrador" OnClick="btnAdmin_Click" />
 
-       <!-- Botón Cliente -->
-       <button class="btn-icon btn-registrarse"> <!-- Aplica la clase btn-registrarse -->
-           <i class="fas fa-user"></i> Cliente
-       </button>
-   </div>
+    <!-- Botón Cliente -->
+    <asp:Button ID="btnCliente" CssClass="btn-icon btn-registrarse" runat="server" Text="Cliente" OnClick="btnCliente_Click" />
+</div>
 
     <!-- Contenedor para los formularios de acceso y registro -->
     <div class="contenedor-formularios">
-        <!-- Formulario de acceso -->
-        <div class="formulario">
-            <h2 class="titulo">Iniciar sesión como Administrador</h2>
-            <form method="post" action="Acceso.aspx">
-                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
-                <div class="mb-3">
-                    <asp:TextBox ID="txtAdmin" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
-                </div>
-                <div class="mb-3">
-                    <asp:TextBox ID="txtContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
-                </div>
-                <asp:Button ID="ButtonAcceder" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAcceder_Click" CausesValidation="false" />
-            </form>
-        </div>
+		<!-- Panel para el formulario de inicio de sesión de Administrador -->
+		<asp:Panel ID="panelAdmin" CssClass="formulario" runat="server" Visible="false">
+			<h2 class="titulo">Iniciar sesión como Administrador</h2>
+			<form method="post" action="Acceso.aspx">
+				<asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
+				<div class="mb-3">
+					<asp:TextBox ID="txtAdmin" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
+				</div>
+				<div class="mb-3">
+					<asp:TextBox ID="txtContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
+				</div>
+				<asp:Button ID="ButtonAcceder" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAcceder_Click" CausesValidation="false" />
+			</form>
+		</asp:Panel>
 
-        <!-- Formulario de registro -->
-        <div class="formulario">
-            <h2 class="titulo">Registro del Cliente</h2>
-            <form method="post" action="Registro.aspx">
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre" />
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Apellido" />
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Edad" />
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Email" />
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Dirección" />
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Medio de Pago" />
-                </div>
-                <button type="submit" class="btn-registrarse">Regístrate</button>
-            </form>
-        </div>
-    </div>
+		<!-- Panel para el formulario de inicio de sesión de Cliente -->
+		<asp:Panel ID="panelCliente" CssClass="formulario" runat="server" Visible="false">
+			<h2 class="titulo">Iniciar sesión como Cliente</h2>
+			<form method="post" action="AccesoCliente.aspx">
+				<asp:Literal ID="LiteralMessageCliente" runat="server"></asp:Literal>
+				<div class="mb-3">
+					<asp:TextBox ID="txtClienteUsuario" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
+				</div>
+				<div class="mb-3">
+					<asp:TextBox ID="txtClienteContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
+				</div>
+				<asp:Button ID="ButtonAccederCliente" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAccederCliente_Click" CausesValidation="false" />
+			</form>
+		</asp:Panel>
 
-   <!-- Imagen de pie de página y botón volver -->
-    <div class="footer-image"></div> <!-- Imagen de fondo en el borde inferior -->
+		<!-- Panel para el formulario de registro de cliente -->
+		<asp:Panel ID="panelRegistroCliente" CssClass="formulario" runat="server" Visible="true">
+			<h2 class="titulo">Registro del Cliente</h2>
+			<asp:Literal ID="LiteralRegistroMessage" runat="server"></asp:Literal>
+			<div class="mb-3">
+				<asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" Placeholder="Nombre"></asp:TextBox>
+			</div>
+			<div class="mb-3">
+				<asp:TextBox ID="txtApellido" CssClass="form-control" runat="server" Placeholder="Apellido"></asp:TextBox>
+			</div>
+			<div class="mb-3">
+				<asp:TextBox ID="txtEdad" CssClass="form-control" runat="server" Placeholder="Edad"></asp:TextBox>
+			</div>
+			<div class="mb-3">
+				<asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Placeholder="Email"></asp:TextBox>
+			</div>
+			<div class="mb-3">
+				<asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" Placeholder="Dirección"></asp:TextBox>
+			</div>
+			<div class="mb-3">
+				<asp:TextBox ID="txtMedioPago" CssClass="form-control" runat="server" Placeholder="Medio de Pago"></asp:TextBox>
+			</div>
+			<asp:Button ID="btnRegistrarse" CssClass="btn-registrarse" runat="server" Text="Regístrate" OnClick="btnRegistrarse_Click"/>
+		</asp:Panel>
+
+    <div class="footer-image"></div>
     <button class="btn-volver" onclick="window.history.back();">
         <i class="fas fa-arrow-left"></i> Volver
     </button>

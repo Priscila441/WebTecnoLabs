@@ -10,11 +10,11 @@
         border: 5px solid #4a3c8c; 
         color: #2271b3;
         margin: 1rem 0 0.1em 0; /* Reducir márgenes */
-        max-width: 420px; /* Cuadro más pequeño */
+        max-width: 496px; /* Cuadro más pequeño */
         padding: 0.5rem; /* Reducir el padding */
         border-radius: 12px;
         box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
-        margin-left: 50px; 
+        margin-left: 275px; 
     }
 
     .card .card-title {
@@ -113,8 +113,8 @@
         border-radius: 12px;
         box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
         max-width: 220px; /* Cuadro más pequeño */
-        margin-left: 1px; /* Moverlo a la izquierda */
-        margin-top: 1px; /* Ajustar la distancia entre los cuadros */
+        margin-left: -76px; /* Moverlo a la izquierda */
+        margin-top: 234px; /* Ajustar la distancia entre los cuadros */
     }
      /* Estilo para mover la imagen y el título hacia la derecha */
     .page-header {

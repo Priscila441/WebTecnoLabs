@@ -69,6 +69,15 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Panel panelRegistroRapido;
 
 		/// <summary>
+		/// Control LiteralInicioMessage.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Literal LiteralInicioMessage;
+
+		/// <summary>
 		/// Control txtEmail.
 		/// </summary>
 		/// <remarks>
@@ -105,58 +114,58 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Panel pnlRegister;
 
 		/// <summary>
-		/// Control txtName.
+		/// Control LiteralRegistroMessage.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtName;
+		protected global::System.Web.UI.WebControls.Literal LiteralRegistroMessage;
 
 		/// <summary>
-		/// Control txtLastname.
+		/// Control txtNombre.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtLastname;
+		protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
 		/// <summary>
-		/// Control txtAge.
+		/// Control txtApellido.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtAge;
+		protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
 		/// <summary>
-		/// Control txtEmailRegister.
+		/// Control txtEdad.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtEmailRegister;
+		protected global::System.Web.UI.WebControls.TextBox txtEdad;
 
 		/// <summary>
-		/// Control txtAddress.
+		/// Control txtEmailRegistro.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtAddress;
+		protected global::System.Web.UI.WebControls.TextBox txtEmailRegistro;
 
 		/// <summary>
-		/// Control txtPaymentMethod.
+		/// Control txtDireccion.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtPaymentMethod;
+		protected global::System.Web.UI.WebControls.TextBox txtDireccion;
 
 		/// <summary>
 		/// Control btnRegister.
@@ -177,13 +186,13 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Panel panelConfirmarPago;
 
 		/// <summary>
-		/// Control txtPaymentMethodSelection.
+		/// Control dropMetodoPago.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtPaymentMethodSelection;
+		protected global::System.Web.UI.WebControls.DropDownList dropMetodoPago;
 
 		/// <summary>
 		/// Control btnPay.
