@@ -464,7 +464,10 @@
             transform: scale(1);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
-
+        .total-label {
+        font-size: 24px;
+        color: white;
+        }
     </style>
 	<script type="text/javascript">
 		function mostrarRegistro() {
@@ -514,8 +517,9 @@
 	<!-- Botones en la parte inferior -->
 	<div class="bottom-buttons-container">
 		<asp:Button ID="btnRegresar" runat="server" Text="Regresar" class="button-common back-button" />
-        <asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" class="button-common calculate-button" />
-        <asp:Button ID="btnPagar" runat="server" Text="Pagar" class="button-common pay-button" />
+        <asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" class="button-common calculate-button" OnClick="btnCalcularTotal_Click1"/>
+        <asp:Label ID="lblTotal" runat="server" CssClass="total-label" Text=""></asp:Label>
+        <asp:Button ID="btnPagar" runat="server" Text="Pagar" class="button-common pay-button" OnClick="btnPagar_Click1"/>
 	</div>
 
 

@@ -53,20 +53,6 @@ namespace C1_IU
 		{
 			return GestorCompra.Instancia.ClienteActual != null;
 		}
-
-		protected void btnPagar_Click(object sender, EventArgs e)
-		{
-			if (EstaLogueado())
-			{
-				panelConfirmarPago.Visible = !panelConfirmarPago.Visible;
-			}
-			else
-			{
-				ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, inicie sesión para completar la compra.');", true);
-				panelRegistroRapido.Visible = !panelRegistroRapido.Visible;
-			}
-		}
-
 		protected void btnCancelPayment_Click(object sender, EventArgs e)
 		{
 			panelConfirmarPago.Visible = !panelConfirmarPago.Visible;
@@ -157,11 +143,23 @@ namespace C1_IU
 				LiteralInicioMessage.Text = "<div class='alert alert-danger'>Email o contraseña incorrectos</div>";
 			}
 		}
-
-		protected void btnCalcularTotal_Click(object sender, EventArgs e)
+		protected void btnCalcularTotal_Click1(object sender, EventArgs e)
 		{
 			decimal total = CarritoCompra.Instancia.CalcularTotal();
 			lblTotal.Text = $"Total: ${total}";
+		}
+
+		protected void btnPagar_Click1(object sender, EventArgs e)
+		{
+			if (EstaLogueado())
+			{
+				panelConfirmarPago.Visible = !panelConfirmarPago.Visible;
+			}
+			else
+			{
+				ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, inicie sesión para completar la compra.');", true);
+				panelRegistroRapido.Visible = !panelRegistroRapido.Visible;
+			}
 		}
 	}
 }
