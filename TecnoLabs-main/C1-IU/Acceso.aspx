@@ -34,7 +34,7 @@
             color: #fff;
             width: 200px;
             font-size: 14px;
-            padding: 8px;
+            padding: 3px;
             border: none;
             border-radius: 4px;
             transition: all 0.3s ease;
@@ -98,6 +98,16 @@
             transform: scale(1.1);
         }
     </style>
+    <script>
+		function volverAtras() {
+			if (history.length > 1) {
+				window.history.back();
+			} else {
+				window.location.href = 'Default.aspx';
+			}
+		}
+
+	</script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -161,14 +171,11 @@
 			<div class="mb-3">
 				<asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" Placeholder="Dirección"></asp:TextBox>
 			</div>
-			<div class="mb-3">
-				<asp:TextBox ID="txtMedioPago" CssClass="form-control" runat="server" Placeholder="Medio de Pago"></asp:TextBox>
-			</div>
 			<asp:Button ID="btnRegistrarse" CssClass="btn-registrarse" runat="server" Text="Regístrate" OnClick="btnRegistrarse_Click"/>
 		</asp:Panel>
 
     <div class="footer-image"></div>
-    <button class="btn-volver" onclick="window.history.back();">
-        <i class="fas fa-arrow-left"></i> Volver
-    </button>
+		<%--<button class="btn-volver" onclick="volverAtras();">
+			<i class="fas fa-arrow-left"></i>Volver
+		</button>--%>
 </asp:Content>

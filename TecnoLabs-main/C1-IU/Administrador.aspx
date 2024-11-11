@@ -228,7 +228,7 @@
                                 <asp:TextBox ID="TxtStock" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
-                        <!-- Botones de acción alineados a la izquierda -->
+                        <!-- Botones de acción alineados -->
 						<div class="btn-group mb-4">
 							<asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary me-md-2" OnClick="BtnAgregar_Click" />
 							<asp:Button ID="BtnEditar" runat="server" Text="Editar" CssClass="btn btn-warning me-md-2" OnClick="BtnEditar_Click" Enabled="false" />
@@ -237,8 +237,7 @@
 							<asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="BtnCancelar_Click" />
 							<asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" Style="display: none;" CssClass="btn btn-custom btn-sm" />
 						</div>
-                        <!-- Campo de búsqueda ajustado -->
-                        <!-- Campo de búsqueda ajustado -->
+                        <!-- Campo de busqueda -->
                         <div class="search-container">
                             <div style="display: flex; justify-content: space-between; width: 100%;">
                                 <asp:TextBox ID="TxtBuscar" runat="server" CssClass="form-control" Placeholder="Buscar..."></asp:TextBox>
@@ -249,7 +248,7 @@
                 </div>
             </div>
 
-            <!-- Cuadro de filtro al costado -->
+            <!-- Cuadro de filtro -->
             <div class="col-md-4">
                 <div class="filter-card">
                     <h4 class="card-title text-center">Filtro</h4>

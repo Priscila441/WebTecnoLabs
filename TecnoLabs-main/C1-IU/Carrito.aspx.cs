@@ -112,19 +112,22 @@ namespace C1_IU
 			{
 				int idCompra = conexion.RealizarCompra(dropMetodoPago.Text);
 
-				if (idCompra != 0)
+				if (idCompra != 0 && dropMetodoPago.Text != "Seleccionar")
 				{
 					gvCarrito.DataSource = null;
 					CarritoCompra.Instancia.listProductos.Clear();
 
-					string msg = $"Compra realizada con éxito. ID de Compra: {idCompra}";
-					ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('{msg}');", true);
-
-					Response.Redirect("Default.aspx", false);
+					msg = $"Compra realizada con éxito. ID de Compra: {idCompra}";
+					string script = $@"
+					alert('{msg}');
+					setTimeout(function() {{
+						window.location.href = 'Default.aspx';
+					}}, 500);";
+					ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
 				}
 				else
 				{
-					msg = "Se produjo un error al realizar la compra.";
+					msg = "Se produjo un error al realizar la compra. Recuerde seleccionar un método de pago.";
 					ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('{msg}');", true);
 				}
 			}
@@ -153,6 +156,12 @@ namespace C1_IU
 			{
 				LiteralInicioMessage.Text = "<div class='alert alert-danger'>Email o contraseña incorrectos</div>";
 			}
+		}
+
+		protected void btnCalcularTotal_Click(object sender, EventArgs e)
+		{
+			decimal total = CarritoCompra.Instancia.CalcularTotal();
+			lblTotal.Text = $"Total: ${total}";
 		}
 	}
 }

@@ -65,9 +65,13 @@ namespace C1_IU
 			if (esValido)
 			{
 				msg = "Sesión iniciada correctamente.";
-				ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('{msg}');", true);
+				string script = $@"
+				alert('{msg}');
+				setTimeout(function() {{
+					window.location.href = 'Default.aspx';
+				}}, 1000);";
+				ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
 
-				Response.Redirect("Default.aspx", false);
 			}
 			else
 			{
@@ -98,8 +102,12 @@ namespace C1_IU
 			if (esRegistrado)
 			{
 				msg = $"¡Felicitaciones {persona.Nombre}, te registraste exitosamente!";
-				ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('{msg}');", true);
-				Response.Redirect("Default.aspx", false);
+				string script = $@"
+				alert('{msg}');
+				setTimeout(function() {{
+					window.location.href = 'Default.aspx';
+				}}, 1000);";
+				ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
 			}
 			else
 			{

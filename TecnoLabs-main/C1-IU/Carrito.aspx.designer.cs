@@ -24,15 +24,6 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Button btnQuitarProducto;
 
 		/// <summary>
-		/// Control btnRegresar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnRegresar;
-
-		/// <summary>
 		/// Control btnCalcularTotal.
 		/// </summary>
 		/// <remarks>
@@ -40,6 +31,15 @@ namespace C1_IU
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button btnCalcularTotal;
+
+		/// <summary>
+		/// Control lblTotal.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblTotal;
 
 		/// <summary>
 		/// Control btnPagar.

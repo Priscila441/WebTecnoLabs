@@ -405,6 +405,10 @@
             transform: scale(1.05);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
+        .total-label {
+            font-size: 24px;
+            color: white;
+        }
     </style>
 	<script type="text/javascript">
 		function mostrarRegistro() {
@@ -453,18 +457,19 @@
 
 	<!-- Botones en la parte inferior -->
 	<div class="bottom-buttons-container">
-		<asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="back-button"/>
-		<asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" CssClass="calculate-button" />
+		<%--<asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="back-button"/>--%>
+		<asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" CssClass="calculate-button" OnClick="btnCalcularTotal_Click"/>
+        <asp:Label ID="lblTotal" runat="server" CssClass="total-label" Text=""></asp:Label>
 		<asp:Button ID="btnPagar" runat="server" Text="Pagar" CssClass="pay-button" OnClick="btnPagar_Click"/>
 	</div>
 
 
-    <!-- Botón Volver en el borde inferior derecho con ícono -->
+    <%--<!-- Botón Volver en el borde inferior derecho con ícono -->
     <div class="back-button-container">
         <button>
             <i class="fas fa-arrow-left"></i> Volver
         </button>
-    </div>
+    </div>--%>
 
 	<!-- Contenedor del GridView -->
 	<div class="grid-container">
