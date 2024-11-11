@@ -3,7 +3,7 @@
     <style>
         /* Estilo para fondo de la página */
         body {
-            background-color: #470224; /* Color de fondo de toda la página */
+            background-color: #470224; /* Color de fondo de toda la pagina */
         }
 
         /* Estilo para organizar los contenedores en una fila y alinear a la derecha */
@@ -168,8 +168,8 @@
             <label class="product-stock">Stock disponible:</label>
             <input type="text" class="product-textbox" value="Cantidad: 1 (+10 disponibles)" readonly />
             <div class="card-buttons">
-                <asp:Button ID="BtnComprar1" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" />
-                <asp:Button ID="BtnAgregarCarrito1" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" />
+                <asp:Button ID="BtnComprar1" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" Enabled="false"/>
+                <asp:Button ID="BtnAgregarCarrito1" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" OnClick="BtnAgregarCarrito1_Click"/>
             </div>
         </div>
 
@@ -187,8 +187,8 @@
             <label class="product-stock">Stock disponible: </label>
             <input type="text" class="product-textbox" value="Cantidad: 1 (+12 disponibles)" readonly />
             <div class="card-buttons">
-                <asp:Button ID="BtnComprar2" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" />
-                <asp:Button ID="BtnAgregarCarrito2" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" />
+                <asp:Button ID="BtnComprar2" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" Enabled="false"/>
+                <asp:Button ID="BtnAgregarCarrito2" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" OnClick="BtnAgregarCarrito2_Click" />
             </div>
         </div>
 
@@ -206,8 +206,8 @@
             <label class="product-stock">Stock disponible:</label>
             <input type="text" class="product-textbox" value="Cantidad: 1 (+10 disponibles)" readonly />
             <div class="card-buttons">
-                <asp:Button ID="BtnComprar3" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" />
-                <asp:Button ID="BtnAgregarCarrito3" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" />
+                <asp:Button ID="BtnComprar3" runat="server" Text="Comprar Ahora" CssClass="btn btn-primary" Enabled="false"/>
+                <asp:Button ID="BtnAgregarCarrito3" runat="server" Text="Agregar al Carrito" CssClass="btn btn-secondary" OnClick="BtnAgregarCarrito3_Click"/>
             </div>
         </div>
     </div>

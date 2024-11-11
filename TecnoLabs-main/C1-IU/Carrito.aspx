@@ -182,8 +182,8 @@
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             position: absolute; /* Agregar posición absoluta */
-            right: 0; /* Colocarlo hacia el borde derecho */
-            top: 30%; /* Ajusta el valor según sea necesario para que quede a la altura correcta */
+            right: 41; /* Colocarlo hacia el borde derecho */
+            top: 62%; /* Ajusta el valor según sea necesario para que quede a la altura correcta */
         }
 
         .payment-method-container h3 {
@@ -257,8 +257,8 @@
           /* Estilos para el cuadro de Inicio de Sesión */
         .login-box {
             position: absolute;
-            top: 200px; /* Ajusta la distancia desde el borde superior */
-            left: 50%; /* Ajusta esta distancia para moverlo más a la derecha */
+            top: 318px; /* Ajusta la distancia desde el borde superior */
+            left: 72%; /* Ajusta esta distancia para moverlo más a la derecha */
             width: 25%; /* Ajusta el tamaño del cuadro */
             padding: 20px;
             background-color: #FFC0C0;
@@ -357,8 +357,8 @@
           /* Estilo del cuadro de registro del cliente */
         .client-registration-box {
             position: absolute;
-            top: 200px; /* Ajusta la posición vertical según sea necesario */
-            left: 40%;
+            top: 307px; /* Ajusta la posición vertical según sea necesario */
+            left: 84%;
             transform: translateX(-50%);
             width: 25%; /* Tamaño del cuadro reducido */
             padding: 10px;
@@ -366,7 +366,6 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            position: absolute;
         }
 
         .client-registration-box h3 {
@@ -407,6 +406,13 @@
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
+	<script type="text/javascript">
+		function mostrarRegistro() {
+			// Obtén los elementos de los paneles por sus IDs
+			document.getElementById('<%= panelRegistroRapido.ClientID %>').style.display = 'none';
+			document.getElementById('<%= pnlRegister.ClientID %>').style.display = 'block';
+		}
+	</script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -438,20 +444,21 @@
         </div>
     </div>
     
-    <!-- Botón para quitar producto -->
-    <div class="top-buttons-container">
-        <button>Quitar Producto</button>
-    </div>
+	<!-- Botón para quitar producto -->
+	<div class="top-buttons-container">
+		<asp:Button ID="btnQuitarProducto" runat="server" Text="Quitar Producto" CssClass="btn btn-danger" OnClick="btnQuitarProducto_Click" />
+	</div>
 
     <!-- Imagen en el borde inferior centrada -->
     <div class="bottom-image"></div>
 
-    <!-- Botones en la parte inferior -->
-    <div class="bottom-buttons-container">
-        <button class="back-button">Regresar</button>
-        <button class="calculate-button">Calcular Total</button>
-        <button class="pay-button">Pagar</button>
-    </div>
+	<!-- Botones en la parte inferior -->
+	<div class="bottom-buttons-container">
+		<asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="back-button"/>
+		<asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" CssClass="calculate-button" />
+		<asp:Button ID="btnPagar" runat="server" Text="Pagar" CssClass="pay-button" OnClick="btnPagar_Click"/>
+	</div>
+
 
     <!-- Botón Volver en el borde inferior derecho con ícono -->
     <div class="back-button-container">
@@ -459,12 +466,13 @@
             <i class="fas fa-arrow-left"></i> Volver
         </button>
     </div>
-  
-    <!-- Contenedor del GridView -->
-<div class="grid-container">
+
+	<!-- Contenedor del GridView -->
+	<div class="grid-container">
 		<asp:GridView ID="gvCarrito" runat="server" AutoGenerateColumns="False"
 			CssClass="grid-view" BorderColor="#470224" BorderStyle="Solid"
 			BorderWidth="1px" CellPadding="8" ForeColor="#470224"
+			AutoGenerateSelectButton="True"
 			GridLines="None">
 			<Columns>
 				<asp:BoundField DataField="IdProducto" HeaderText="IdProducto" />
@@ -480,34 +488,38 @@
 		</asp:GridView>
 	</div>
   
-    <!-- Cuadro de Inicio de Sesión -->
-    <div class="login-box">
-        <h3>Inicio de Sesión</h3>
-        <input type="text" placeholder="Email">
-        <input type="password" placeholder="Contraseña">
-        <label class="forgot-password">¿Te olvidaste tu contraseña?</label>
-        <button class="login-button">Iniciar Sesión</button>
-        <label class="register">¿No tienes cuenta? <a href="#">Regístrate</a></label>
-    </div>
-         <!-- Cuadro de Registro -->
-	<div class="client-registration-box">
+	<!-- Cuadro de Inicio de Sesión -->
+	<asp:Panel ID="panelRegistroRapido" runat="server" CssClass="login-box" Visible="false">
+		<h3>Inicio de Sesión</h3>
+		<asp:TextBox ID="txtEmail" runat="server" Placeholder="Email"></asp:TextBox>
+		<asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Placeholder="Contraseña"></asp:TextBox>
+		<label class="forgot-password">¿Te olvidaste tu contraseña?</label>
+		<asp:Button ID="btnLogin" runat="server" CssClass="login-button" Text="Iniciar Sesión" />
+		<label class="register">¿No tienes cuenta? <a href="javascript:void(0);" onclick="mostrarRegistro()">Regístrate</a></label>
+	</asp:Panel>
+
+	<!-- Cuadro de Registro -->
+	<asp:Panel ID="pnlRegister" runat="server" CssClass="client-registration-box" Visible="true" style="display: none;">
 		<h3>Registro del Cliente</h3>
-		<input type="text" id="name" placeholder="Nombre">
-		<input type="text" id="lastname" placeholder="Apellido">
-		<input type="text" id="age" placeholder="Edad">
-		<input type="text" id="email" placeholder="Email">
-		<input type="text" id="address" placeholder="Dirección">
-		<input type="text" id="payment" placeholder="Medio de Pago">
-		<button class="register-button">Regístrate</button>
-	</div>
-    <!-- Cuadro de selección de método de pago -->
-    <div class="payment-method-container">
-        <h3>Seleccione un Método de Pago</h3>
-        <input type="text" placeholder="Ingrese su método de pago" id="paymentMethod" />
-        <div class="payment-method-buttons">
-            <button class="pay-button">Pagar</button>
-            <button class="cancel-button">Cancelar</button>
-        </div>
-    </div>
+		<asp:TextBox ID="txtName" runat="server" Placeholder="Nombre"></asp:TextBox>
+		<asp:TextBox ID="txtLastname" runat="server" Placeholder="Apellido"></asp:TextBox>
+		<asp:TextBox ID="txtAge" runat="server" Placeholder="Edad"></asp:TextBox>
+		<asp:TextBox ID="txtEmailRegister" runat="server" Placeholder="Email"></asp:TextBox>
+		<asp:TextBox ID="txtAddress" runat="server" Placeholder="Dirección"></asp:TextBox>
+		<asp:TextBox ID="txtPaymentMethod" runat="server" Placeholder="Medio de Pago"></asp:TextBox>
+		<asp:Button ID="btnRegister" runat="server" CssClass="register-button" Text="Regístrate" />
+	</asp:Panel>
+
+
+	<!-- Cuadro de selección de método de pago -->
+	<asp:Panel ID="panelConfirmarPago" runat="server" CssClass="payment-method-container" Visible="false">
+		<h3>Seleccione un Método de Pago</h3>
+		<asp:TextBox ID="txtPaymentMethodSelection" runat="server" Placeholder="Ingrese su método de pago"></asp:TextBox>
+		<div class="payment-method-buttons">
+			<asp:Button ID="btnPay" runat="server" CssClass="pay-button" Text="Pagar" />
+			<asp:Button ID="btnCancelPayment" runat="server" CssClass="cancel-button" Text="Cancelar" />
+		</div>
+	</asp:Panel>
+
 </asp:Content>
 
