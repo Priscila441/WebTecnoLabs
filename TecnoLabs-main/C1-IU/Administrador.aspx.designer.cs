@@ -78,13 +78,13 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Label LabelCategoria;
 
 		/// <summary>
-		/// Control TxtCategoria.
+		/// Control dCategorias.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TxtCategoria;
+		protected global::System.Web.UI.WebControls.DropDownList dCategorias;
 
 		/// <summary>
 		/// Control LabelStock.
@@ -123,22 +123,22 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Button BtnEditar;
 
 		/// <summary>
-		/// Control BntEliminar.
+		/// Control BtnEliminar.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button BntEliminar;
+		protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
 		/// <summary>
-		/// Control BntGuardar.
+		/// Control BtnGuardar.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button BntGuardar;
+		protected global::System.Web.UI.WebControls.Button BtnGuardar;
 
 		/// <summary>
 		/// Control BtnCancelar.
@@ -150,6 +150,15 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.Button BtnCancelar;
 
 		/// <summary>
+		/// Control btnAceptar.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnAceptar;
+
+		/// <summary>
 		/// Control TxtBuscar.
 		/// </summary>
 		/// <remarks>
@@ -159,13 +168,58 @@ namespace C1_IU
 		protected global::System.Web.UI.WebControls.TextBox TxtBuscar;
 
 		/// <summary>
-		/// Control BtnBuscar.
+		/// Control BntBuscar.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button BtnBuscar;
+		protected global::System.Web.UI.WebControls.Button BntBuscar;
+
+		/// <summary>
+		/// Control LabelCategoriaFiltro.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label LabelCategoriaFiltro;
+
+		/// <summary>
+		/// Control dropCategoria.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList dropCategoria;
+
+		/// <summary>
+		/// Control LabelPrecioFiltro.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label LabelPrecioFiltro;
+
+		/// <summary>
+		/// Control dropOrden.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList dropOrden;
+
+		/// <summary>
+		/// Control BtnAplicarFiltro.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button BtnAplicarFiltro;
 
 		/// <summary>
 		/// Control gvProductos.

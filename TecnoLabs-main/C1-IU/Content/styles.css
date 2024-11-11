@@ -1,12 +1,38 @@
-﻿.navbar {
-    background-color: #021947;
-    font-family: Arial, sans-serif;
+﻿/* Ajuste global de box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-.navbar .navbar-brand, .navbar .nav-link, .navbar .form-control {
-    color: #FFFFFF !important;
-    font-weight: bold;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
+
+body {
+    background-color: #470224; /* Color de fondo de toda la página */
+}
+
+.form-default{
+    height: 100%;
+}
+/* Barra de navegación */
+.navbar {
+    background-color: #021947;
+    font-family: Arial, sans-serif;
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa el ancho total */
+    height: 75px;
+    z-index: 1000;
+}
+
+    .navbar .navbar-brand, .navbar .nav-link, .navbar .form-control {
+        color: #FFFFFF !important;
+        font-weight: bold;
+    }
 
 .search-bar {
     width: 350px;
@@ -54,16 +80,17 @@
 /* Sidebar */
 .sidebar {
     position: fixed;
-    top: 75px;
+    top: 75px; /* Debajo de la barra de navegación */
     left: 0;
     width: 150px;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 75px); /* Asegura que cubra toda la altura de la pantalla debajo de la navbar */
     background-color: #242424;
     padding-top: 1rem;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 900;
 }
 
     .sidebar .category-links {
@@ -135,25 +162,29 @@
             background-color: #e55d4f;
         }
 
+/* Contenedor del contenido principal */
 .content-container {
-    margin-left: 10px;
+    margin-left: 150px; /* Deja espacio para la barra lateral */
+    padding-top: 75px; /* Espacio para la navbar */
     padding: 1rem;
+    min-height: calc(100vh - 75px); /* Asegura que el contenido llene la pantalla */
 }
 
 /* Contenedor para imagen promocional alineada a la esquina superior derecha */
 .promo-container {
-    position: absolute;
-    top: 75px;
+    position: relative;
     left: 150px;
     right: 0;
     padding: 10px;
-    border-radius: 0px;
     background-color: #470224;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    height: 100%; /* Ocupar toda la altura */
+    box-sizing: border-box;
+    margin-right: 150px;
 }
 
 .top-image img {
@@ -205,10 +236,7 @@
     margin-left: auto;
 }
 
-body {
-    background-color: #470224; /* Color de fondo de toda la página */
-}
-
+/* Formulario de acceso */
 .formulario-acceso {
     max-width: 400px;
     margin: 100px auto;
@@ -221,29 +249,67 @@ body {
     color: #ffffff; /* Color de la fuente */
 }
 
-.formulario-acceso .form-label {
-    color: #ffffff; /* Color de la fuente */
+    .formulario-acceso .form-label {
+        color: #ffffff; /* Color de la fuente */
+    }
+
+    .formulario-acceso .form-control {
+        color: #000000; /* Color del texto dentro del campo de entrada */
+        background-color: #f8f9fa; /* Fondo blanco para los campos de entrada */
+    }
+
+        .formulario-acceso .form-control::placeholder {
+            color: #cccccc; /* Color de los placeholders */
+        }
+
+    .formulario-acceso .btn-primary {
+        background-color: #ffcc00; /* Color de fondo del botón */
+        border-color: #ffcc00; /* Color del borde del botón */
+        color: #021947; /* Color de la fuente del botón */
+    }
+
+        .formulario-acceso .btn-primary:hover {
+            background-color: #ffcc99; /* Color de fondo del botón al pasar el cursor */
+            border-color: #ffcc99; /* Color del borde del botón al pasar el cursor */
+            color: #021947; /* Color de la fuente del botón al pasar el cursor */
+        }
+
+/* Estilos generales para el GridView */
+.grid-container {
+    margin: 2rem auto;
+    max-width: 800px;
 }
 
-.formulario-acceso .form-control {
-    color: #000000; /* Color del texto dentro del campo de entrada */
-    background-color: #f8f9fa; /* Fondo blanco para los campos de entrada */
+.grid-view {
+    width: 100%;
+    border-collapse: collapse; /* Colapsa los bordes */
+    margin-top: 20px;
+    border: 1px solid #470224; /* Borde del grid */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el grid */
 }
 
-.formulario-acceso .form-control::placeholder {
-    color: #cccccc; /* Color de los placeholders */
-}
+    .grid-view th, .grid-view td {
+        padding: 8px 12px; /* Espaciado interno */
+        text-align: center;
+        font-size: 14px; /* Tamaño de la fuente */
+        border: 1px solid #4a3c8c; /* Borde para celdas */
+    }
 
-.formulario-acceso .btn-primary {
-    background-color: #ffcc00; /* Color de fondo del botón */
-    border-color: #ffcc00; /* Color del borde del botón */
-    color: #021947; /* Color de la fuente del botón */
-}
+    .grid-view th {
+        background-color: #470224; /* Fondo oscuro para los encabezados */
+        color: #FFC0C0; /* Color claro para el texto */
+        font-weight: bold; /* Negrita para los encabezados */
+    }
 
-.formulario-acceso .btn-primary:hover {
-    background-color: #ffcc99; /* Color de fondo del botón al pasar el cursor */
-    border-color: #ffcc99; /* Color del borde del botón al pasar el cursor */
-    color: #021947; /* Color de la fuente del botón al pasar el cursor */
-}
+    .grid-view tr:nth-child(even) {
+        background-color: #f2f2f2; /* Fondo claro para filas pares */
+    }
 
+    .grid-view tr:hover {
+        background-color: #ddd; /* Fondo cuando pasa el mouse */
+    }
 
+    .grid-view .selected-row {
+        background-color: #FFC0C0; /* Fondo destacado cuando una fila está seleccionada */
+        color: #470224; /* Color de texto de la fila seleccionada */
+    }
