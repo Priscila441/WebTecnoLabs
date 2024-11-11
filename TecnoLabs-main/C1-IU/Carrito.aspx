@@ -437,7 +437,7 @@
             Pago
         </div>
     </div>
-
+    
     <!-- Botón para quitar producto -->
     <div class="top-buttons-container">
         <button>Quitar Producto</button>
@@ -460,17 +460,27 @@
         </button>
     </div>
   
-    <div class="client-registration-box">
-        <h3>Registro del Cliente</h3>
-        <input type="text" id="name" placeholder="Nombre">
-        <input type="text" id="lastname" placeholder="Apellido">
-        <input type="text" id="age" placeholder="Edad">
-        <input type="text" id="email" placeholder="Email">
-        <input type="text" id="address" placeholder="Dirección">
-        <input type="text" id="payment" placeholder="Medio de Pago">
-        <button class="register-button">Regístrate</button>
-    </div>
-     <!-- Cuadro de Inicio de Sesión -->
+    <!-- Contenedor del GridView -->
+<div class="grid-container">
+		<asp:GridView ID="gvCarrito" runat="server" AutoGenerateColumns="False"
+			CssClass="grid-view" BorderColor="#470224" BorderStyle="Solid"
+			BorderWidth="1px" CellPadding="8" ForeColor="#470224"
+			GridLines="None">
+			<Columns>
+				<asp:BoundField DataField="IdProducto" HeaderText="IdProducto" />
+				<asp:BoundField DataField="Marca" HeaderText="Marca" />
+				<asp:BoundField DataField="Modelo" HeaderText="Modelo" />
+				<asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
+				<asp:BoundField DataField="IdCategoria" HeaderText="IdCategoría" />
+				<asp:BoundField DataField="Stock" HeaderText="Stock" />
+			</Columns>
+			<HeaderStyle CssClass="table-primary" />
+			<RowStyle CssClass="table-light" />
+			<SelectedRowStyle CssClass="selected-row" />
+		</asp:GridView>
+	</div>
+  
+    <!-- Cuadro de Inicio de Sesión -->
     <div class="login-box">
         <h3>Inicio de Sesión</h3>
         <input type="text" placeholder="Email">
@@ -479,7 +489,17 @@
         <button class="login-button">Iniciar Sesión</button>
         <label class="register">¿No tienes cuenta? <a href="#">Regístrate</a></label>
     </div>
-
+         <!-- Cuadro de Registro -->
+	<div class="client-registration-box">
+		<h3>Registro del Cliente</h3>
+		<input type="text" id="name" placeholder="Nombre">
+		<input type="text" id="lastname" placeholder="Apellido">
+		<input type="text" id="age" placeholder="Edad">
+		<input type="text" id="email" placeholder="Email">
+		<input type="text" id="address" placeholder="Dirección">
+		<input type="text" id="payment" placeholder="Medio de Pago">
+		<button class="register-button">Regístrate</button>
+	</div>
     <!-- Cuadro de selección de método de pago -->
     <div class="payment-method-container">
         <h3>Seleccione un Método de Pago</h3>
@@ -489,6 +509,5 @@
             <button class="cancel-button">Cancelar</button>
         </div>
     </div>
-
-
 </asp:Content>
+

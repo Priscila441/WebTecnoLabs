@@ -214,7 +214,12 @@
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelCategoria" runat="server" Text="Categoría" CssClass="form-label fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtCategoria" runat="server" CssClass="form-control"></asp:TextBox>
+								<asp:DropDownList ID="dCategorias" runat="server" CssClass="dropdown-item" BackColor="White" Width="170px">
+									<asp:ListItem Selected="True">Seleccionar</asp:ListItem>
+									<asp:ListItem>Celulares</asp:ListItem>
+									<asp:ListItem>Tablets</asp:ListItem>
+									<asp:ListItem>Notebooks</asp:ListItem>
+								</asp:DropDownList>
                             </div>
                         </div>
                         <div class="form-row">
@@ -224,19 +229,20 @@
                             </div>
                         </div>
                         <!-- Botones de acción alineados a la izquierda -->
-                        <div class="btn-group mb-4">
-                            <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" />
-                            <asp:Button ID="BtnEditar" runat="server" Text="Editar" CssClass="btn btn-warning" />
-                            <asp:Button ID="BntEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"/>
-                            <asp:Button ID="BntGuardar" runat="server" Text="Guardar" CssClass="btn btn-success"/>
-                            <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" />
-                        </div>
+						<div class="btn-group mb-4">
+							<asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary me-md-2" OnClick="BtnAgregar_Click" />
+							<asp:Button ID="BtnEditar" runat="server" Text="Editar" CssClass="btn btn-warning me-md-2" OnClick="BtnEditar_Click" Enabled="false" />
+							<asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger me-md-2" OnClick="BtnEliminar_Click" Enabled="false" />
+							<asp:Button ID="BtnGuardar" runat="server" Text="Guardar" CssClass="btn btn-success me-md-2" OnClick="BtnGuardar_Click" Enabled="false" />
+							<asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="BtnCancelar_Click" />
+							<asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" Style="display: none;" CssClass="btn btn-custom btn-sm" />
+						</div>
                         <!-- Campo de búsqueda ajustado -->
                         <!-- Campo de búsqueda ajustado -->
                         <div class="search-container">
                             <div style="display: flex; justify-content: space-between; width: 100%;">
-                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Placeholder="Buscar..."></asp:TextBox>
-                                <asp:Button ID="BntBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary btn-search" style="margin-left: 10px; width: 48%;" />
+                                <asp:TextBox ID="TxtBuscar" runat="server" CssClass="form-control" Placeholder="Buscar..."></asp:TextBox>
+                                <asp:Button ID="BntBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary btn-search" style="margin-left: 10px; width: 48%;" OnClick="BntBuscar_Click" />
                             </div>
                         </div>
                     </div>
@@ -251,15 +257,24 @@
                         <div class="form-row">
                             <div class="mb-3">
                                 <asp:Label ID="LabelCategoriaFiltro" runat="server" Text="Categoría" CssClass="form-label fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtCategoriaFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+								<asp:DropDownList ID="dropCategoria" runat="server" CssClass="dropdown-item" BackColor="White" Width="70px">
+									<asp:ListItem Selected="True">Seleccionar</asp:ListItem>
+									<asp:ListItem>Celulares</asp:ListItem>
+									<asp:ListItem>Tablets</asp:ListItem>
+									<asp:ListItem>Notebooks</asp:ListItem>
+								</asp:DropDownList>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelPrecioFiltro" runat="server" Text="Precio" CssClass="form-label fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtPrecioFiltro" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
+								<asp:DropDownList ID="dropOrden" runat="server" CssClass="dropdown-item" BackColor="White" Width="70px">
+									<asp:ListItem Selected="True">Seleccionar</asp:ListItem>
+									<asp:ListItem>Menor</asp:ListItem>
+									<asp:ListItem>Mayor</asp:ListItem>
+								</asp:DropDownList>
+							</div>
                         </div>
                         <div class="text-center">
-                            <asp:Button ID="BtnAplicarFiltro" runat="server" Text="Aplicar Filtro" CssClass="btn btn-primary" />
+                            <asp:Button ID="BtnAplicarFiltro" runat="server" Text="Aplicar Filtro" CssClass="btn btn-primary" OnClick="BtnAplicarFiltro_Click"/>
                         </div>
                     </div>
                 </div>
@@ -273,7 +288,7 @@
                     <asp:BoundField DataField="IdProducto" HeaderText="IdProducto"/>
                     <asp:BoundField DataField="Marca" HeaderText="Marca" />
                     <asp:BoundField DataField="Modelo" HeaderText="Modelo" />
-                    <asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
+                    <asp:BoundField DataField="Precio" HeaderText="Precio"/>
                     <asp:BoundField DataField="IdCategoria" HeaderText="IdCategoría" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock" />
                 </Columns>
