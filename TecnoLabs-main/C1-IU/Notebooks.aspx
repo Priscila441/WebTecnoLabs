@@ -148,7 +148,56 @@
                 font-size: 0.5rem; /* Reducir tamaño de los textos */
             }
         }
+      /* Estilo de la imagen de propaganda */
+        .propaganda {
+            width: 75%;
+            margin-top: 2rem;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0; /* Inicialmente invisible */
+            border-radius: 35px;
+            height: 120px;
+            transition: transform 1s ease-out, opacity 1s ease-out; /* Transición suave para movimiento y opacidad */
+        }
+
+        /* La imagen aparece y se mueve */
+        .propaganda.visible {
+            opacity: 1; /* Hace visible la imagen */
+            transform: translateX(-50%) translateY(0); /* En su posición inicial */
+        }
+
+        /* Efecto de desplazamiento */
+        .propaganda.move {
+            opacity: 1; /* Mantiene la imagen visible */
+            transform: translateX(-50%) translateY(-30px); /* La imagen se mueve un poco hacia arriba */
+        }
+
+        /* Efecto de animación en hover (opcional) */
+        .propaganda:hover {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
     </style>
+
+    <script>
+        // Activar la animación de aparecer cuando la página se cargue
+        window.onload = function () {
+            const propagandaImage = document.querySelector('.propaganda');
+
+            // Aparece la imagen con movimiento
+            setTimeout(function () {
+                propagandaImage.classList.add('visible'); // La imagen se hace visible
+                propagandaImage.classList.add('move'); // Mueve la imagen hacia arriba
+            }, 500); // Espera medio segundo antes de comenzar el movimiento
+
+            // Vuelve a su posición original
+            setTimeout(function () {
+                propagandaImage.classList.remove('move'); // La imagen regresa a su posición
+            }, 3000); // Después de 3 segundos la imagen regresa
+        };
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

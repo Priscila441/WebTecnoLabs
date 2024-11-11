@@ -148,6 +148,31 @@
                 font-size: 0.5rem; /* Reducir tamaño de los textos */
             }
         }
+         /* Estilo para la imagen de propaganda */
+    .propaganda {
+        width: 85%; /* Ajusta el ancho de la imagen */
+        margin-top: 2rem;
+        position: fixed;
+        bottom: 10px;
+        left: 55%; /* Centra la imagen horizontalmente */
+        transform: translateX(-50%); /* Ajuste para que quede perfectamente centrada */
+        border-radius: 35px;
+        height: 120px; /* Ajusta la altura */
+        animation: move-forward-backward 3s ease-in-out infinite; /* Animación de movimiento */
+    }
+
+    /* Definición de la animación de "ir y volver" */
+    @keyframes move-forward-backward {
+        0% {
+            transform: translateX(-50%) translateY(0); /* Posición inicial */
+        }
+        50% {
+            transform: translateX(-50%) translateY(-10px); /* Movimiento hacia arriba */
+        }
+        100% {
+            transform: translateX(-50%) translateY(0); /* Vuelve a la posición original */
+        }
+    }
     </style>
 </asp:Content>
 
