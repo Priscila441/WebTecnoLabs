@@ -16,7 +16,7 @@ namespace C3_DAL
         SqlCommand comando;
         SqlDataReader lector;
                                                  //Acuerdense de cambiar la ruta
-        private string connectionString = "Data Source =FERRARI; Initial Catalog =PracticoGrupal; Integrated Security =sspi";
+        private string connectionString = "Data Source =DESKTOP-JQQTNS6; Initial Catalog =PracticoGrupal; Integrated Security =sspi";
 
         public Conexion()
         {

@@ -15,6 +15,7 @@ namespace C1_IU
         {
 			if (!IsPostBack)
 			{
+				// Si necesitas registrar un evento de postback para un control
 				ClientScript.RegisterForEventValidation(ButtonAcceder.UniqueID);
 			}
 		}
@@ -26,6 +27,7 @@ namespace C1_IU
 
 			if (usuario == "admin@gmail.com" && contrasenia == "123")
 			{
+				// Redirección en el servidor
 				Response.Redirect("Administrador.aspx", false);
 			}
 			else

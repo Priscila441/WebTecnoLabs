@@ -75,12 +75,16 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\adelantate.png" />
+    <Content Include="Images\Admin.jpg" />
     <Content Include="Images\asus.png" />
+    <Content Include="Images\carrito.jpg" />
     <Content Include="Images\compu.png" />
     <Content Include="Images\cuotas.png" />
     <Content Include="Images\envio.jpg" />
     <Content Include="Images\iphone.png" />
     <Content Include="Images\moto.jpg" />
+    <Content Include="Images\motorola1.jpg" />
+    <Content Include="Images\Promos.png" />
     <Content Include="Images\Salemas.png" />
     <Content Include="Images\logotecnolabs.jpg" />
     <Content Include="Images\Sale30.png" />
