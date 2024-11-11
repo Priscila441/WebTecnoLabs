@@ -105,13 +105,14 @@
             display: flex;
             justify-content: space-between;
             width: 60%;
+           
         }
 
         /* Estilo de cada botón */
         .bottom-buttons-container button {
             padding: 10px 20px;
             font-size: 14px;
-            color: white;
+            color: yellow;
             border: none;
             border-radius: 30px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -133,7 +134,7 @@
 
         /* Colores de botones */
         .pay-button {
-            background: #dc3545;
+            background: #FFD700;
         }
 
         .calculate-button {
@@ -405,6 +406,65 @@
             transform: scale(1.05);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
+          /* Estilo común para todos los botones */
+        button, .button-common {
+            padding: 10px 20px;
+            font-size: 14px;
+            color:white; /* Color de texto blanco para mayor contraste */
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto hover para los botones */
+        button:hover, .button-common:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active, .button-common:active {
+            transform: scale(1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Colores específicos para los botones en la parte inferior */
+        .bottom-buttons-container button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 15%;
+        }
+
+        /* Colores específicos para cada botón */
+        .pay-button {
+            background: #FFD700; /* Amarillo */
+        }
+
+        .calculate-button {
+            background: #007bff; /* Azul */
+        }
+
+        .back-button {
+            background: #28a745; /* Verde */
+        }
+
+        /* Efecto hover para los botones */
+        .bottom-buttons-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottom-buttons-container button:active {
+            transform: scale(1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
     </style>
 	<script type="text/javascript">
 		function mostrarRegistro() {
@@ -445,7 +505,7 @@
     
 	<!-- Botón para quitar producto -->
 	<div class="top-buttons-container">
-		<asp:Button ID="btnQuitarProducto" runat="server" Text="Quitar Producto" CssClass="btn btn-danger" OnClick="btnQuitarProducto_Click" />
+		<asp:Button ID="btnQuitarProducto" runat="server" Text="Quitar Producto" CssClass="btn btn-danger" OnClick="btnQuitarProducto_Click"  />
 	</div>
 
     <!-- Imagen en el borde inferior centrada -->
@@ -453,9 +513,9 @@
 
 	<!-- Botones en la parte inferior -->
 	<div class="bottom-buttons-container">
-		<asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="back-button"/>
-		<asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" CssClass="calculate-button" />
-		<asp:Button ID="btnPagar" runat="server" Text="Pagar" CssClass="pay-button" OnClick="btnPagar_Click"/>
+		<asp:Button ID="btnRegresar" runat="server" Text="Regresar" class="button-common back-button" />
+        <asp:Button ID="btnCalcularTotal" runat="server" Text="Calcular Total" class="button-common calculate-button" />
+        <asp:Button ID="btnPagar" runat="server" Text="Pagar" class="button-common pay-button" />
 	</div>
 
 
