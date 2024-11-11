@@ -148,6 +148,84 @@
                 font-size: 0.5rem; /* Reducir tamaño de los textos */
             }
         }
+        /* Estilo para la imagen de propaganda */
+        .propaganda {
+            width: 80%; /* Ajusta el ancho de la imagen */
+            margin-top: 2rem;
+            position: fixed;
+            bottom: 10px;
+            left: 55%; /* Centra la imagen horizontalmente */
+            transform: translateX(-50%); /* Ajuste para que quede perfectamente centrada */
+            border-radius: 35px;
+            height: 120px; /* Ajusta la altura */
+            transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+        }
+
+        /* Efecto glitch al pasar el ratón */
+        .propaganda:hover {
+            animation: glitch 1s infinite linear; /* Aplica la animación de glitch */
+            filter: brightness(1.2); /* Brillo extra para destacar */
+            opacity: 1; /* Asegura que la imagen esté visible */
+        }
+
+        /* Animación de glitch */
+        @keyframes glitch {
+            0% {
+                transform: translateX(-50%) skew(0deg) scale(1);
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+            10% {
+                transform: translateX(-50%) skew(-10deg) scale(1.05);
+                clip-path: inset(0 10% 0 0); /* Distorsión de la imagen */
+                opacity: 0.8;
+            }
+            20% {
+                transform: translateX(-50%) skew(10deg) scale(1.1);
+                clip-path: inset(0 0 10% 0); /* Más distorsión */
+                opacity: 0.6;
+            }
+            30% {
+                transform: translateX(-50%) skew(0deg) scale(1.1);
+                clip-path: inset(0 20% 0 0); /* Distorsión y corte */
+                opacity: 0.7;
+            }
+            40% {
+                transform: translateX(-50%) skew(-5deg) scale(1.2);
+                clip-path: inset(0 0 0 10%); /* Más corte y distorsión */
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(-50%) skew(0deg) scale(1.3); /* Gran distorsión */
+                clip-path: inset(0 15% 10% 0);
+                opacity: 0.3;
+            }
+            60% {
+                transform: translateX(-50%) skew(5deg) scale(1.2);
+                clip-path: inset(0 5% 0 10%); /* Gran distorsión con traslación */
+                opacity: 0.5;
+            }
+            70% {
+                transform: translateX(-50%) skew(-10deg) scale(1.1); /* Distorsión y desplazamiento */
+                clip-path: inset(0 10% 0 10%); /* Aumenta la distorsión */
+                opacity: 0.7;
+            }
+            80% {
+                transform: translateX(-50%) skew(10deg) scale(1.05);
+                clip-path: inset(0 0 5% 5%); /* Vuelve la distorsión */
+                opacity: 0.8;
+            }
+            90% {
+                transform: translateX(-50%) skew(0deg) scale(1);
+                clip-path: inset(0 0 0 0); /* Restaura la imagen parcialmente */
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) skew(0deg) scale(1); /* Restauración final */
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+        }
     </style>
 </asp:Content>
 

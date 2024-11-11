@@ -143,6 +143,34 @@
             background-color: #5A8FBC;
             transform: scale(1.1);
         }
+        /* Estilo para la imagen en el borde inferior */
+        .footer-image {
+            width: 89%; /* La imagen ocupará todo el ancho de la pantalla */
+            height: 150px; /* Ajusta la altura de la imagen */
+            background-image: url('images/motorola1.jpg'); /* Ruta correcta de la imagen */
+            background-size: cover; /* La imagen cubrirá todo el área sin distorsionarse */
+            background-position: center; /* Centra la imagen */
+            margin-top: 10px; /* Espacio superior */
+            position: absolute; /* Para permitir posicionamiento absoluto */
+            right: 0px; /* Coloca la imagen a la derecha */
+            bottom: 0; /* Coloca la imagen en el borde inferior */
+            z-index: -1; /* Asegura que la imagen quede detrás del contenido */
+            border-radius: 45px; /* Bordes redondeados */
+            animation: move-forward-backward 3s ease-in-out infinite; /* Animación de movimiento */
+        }
+
+        /* Definición de la animación de "ir y volver" */
+        @keyframes move-forward-backward {
+            0% {
+                transform: translateY(0); /* Posición inicial */
+            }
+            50% {
+                transform: translateY(-10px); /* Movimiento hacia arriba */
+            }
+            100% {
+                transform: translateY(0); /* Vuelve a la posición original */
+            }
+        }
     </style>
 </asp:Content>
 
