@@ -4,6 +4,22 @@
     <style>
         body {
             background-color: #470224;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor de los botones centrado */
+        .contenedor-botones {
+            display: flex;
+            justify-content: center; /* Centramos los botones */
+            gap: 20px; /* Espacio entre los botones */
+            margin-top: 190px; /* Espaciado superior para no pegarlos al borde */
+        }
+
+        .btn-icon {
+            width: 160px;
+            font-size: 14px;
+            padding: 20px;
         }
 
         .contenedor-formularios {
@@ -11,14 +27,16 @@
             justify-content: center;
             align-items: flex-start;
             gap: 20px;
-            margin-top: 10px;
+            margin-top: -190px; /* Ajustar según la posición deseada para los formularios */
+      
         }
 
         .formulario {
-            max-width: 400px;
-            padding: 20px;
+            max-width: 450px;
+            padding: 15px;
             background-color: #650338;
             border-radius: 8px;
+            height: auto;
         }
 
         .formulario .form-control {
@@ -27,19 +45,23 @@
             border: 1px solid #650338;
             border-radius: 4px;
             width: 100%;
+            padding: 6px;
+            font-size: 13px;
+            margin-bottom: 8px;
+            height: 30px;
         }
 
         .btn-acceder, .btn-registrarse {
             background-color: #8F244D;
             color: #fff;
-            width: 200px;
-            font-size: 14px;
-            padding: 3px;
+            width: 180px;
+            font-size: 13px;
+            padding: 8px;
             border: none;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: block;
-            margin: 10px auto;
+            margin: 8px auto;
         }
 
         .btn-acceder:hover, .btn-registrarse:hover {
@@ -50,10 +72,10 @@
 
         .titulo {
             color: #FFFFFF;
-            font-size: 30px;
+            font-size: 20px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-family: Script MT;
         }
 
@@ -98,84 +120,75 @@
             transform: scale(1.1);
         }
     </style>
-    <script>
-		function volverAtras() {
-			if (history.length > 1) {
-				window.history.back();
-			} else {
-				window.location.href = 'Default.aspx';
-			}
-		}
-
-	</script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Contenedor de botones con iconos -->
-<div class="contenedor-botones">
-    <!-- Botón Administrador -->
-    <asp:Button ID="btnAdmin" CssClass="btn-icon btn-acceder" runat="server" Text="Administrador" OnClick="btnAdmin_Click" />
+    <div class="contenedor-botones">
+        <!-- Botón Administrador -->
+        <asp:Button ID="btnAdmin" CssClass="btn-icon btn-acceder" runat="server" Text="Administrador" OnClick="btnAdmin_Click" />
 
-    <!-- Botón Cliente -->
-    <asp:Button ID="btnCliente" CssClass="btn-icon btn-registrarse" runat="server" Text="Cliente" OnClick="btnCliente_Click" />
-</div>
+        <!-- Botón Cliente -->
+        <asp:Button ID="btnCliente" CssClass="btn-icon btn-registrarse" runat="server" Text="Cliente" OnClick="btnCliente_Click" />
+    </div>
 
     <!-- Contenedor para los formularios de acceso y registro -->
     <div class="contenedor-formularios">
-		<!-- Panel para el formulario de inicio de sesión de Administrador -->
-		<asp:Panel ID="panelAdmin" CssClass="formulario" runat="server" Visible="false">
-			<h2 class="titulo">Iniciar sesión como Administrador</h2>
-			<form method="post" action="Acceso.aspx">
-				<asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
-				<div class="mb-3">
-					<asp:TextBox ID="txtAdmin" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
-				</div>
-				<div class="mb-3">
-					<asp:TextBox ID="txtContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
-				</div>
-				<asp:Button ID="ButtonAcceder" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAcceder_Click" CausesValidation="false" />
-			</form>
-		</asp:Panel>
+        <!-- Panel para el formulario de inicio de sesión de Administrador -->
+        <asp:Panel ID="panelAdmin" CssClass="formulario" runat="server" Visible="false">
+            <h2 class="titulo">Iniciar sesión como Administrador</h2>
+            <form method="post" action="Acceso.aspx">
+                <asp:Literal ID="LiteralMessage" runat="server"></asp:Literal>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtAdmin" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
+                </div>
+                <asp:Button ID="ButtonAcceder" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAcceder_Click" CausesValidation="false" />
+            </form>
+        </asp:Panel>
 
-		<!-- Panel para el formulario de inicio de sesión de Cliente -->
-		<asp:Panel ID="panelCliente" CssClass="formulario" runat="server" Visible="false">
-			<h2 class="titulo">Iniciar sesión como Cliente</h2>
-			<form method="post" action="AccesoCliente.aspx">
-				<asp:Literal ID="LiteralMessageCliente" runat="server"></asp:Literal>
-				<div class="mb-3">
-					<asp:TextBox ID="txtClienteUsuario" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
-				</div>
-				<div class="mb-3">
-					<asp:TextBox ID="txtClienteContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
-				</div>
-				<asp:Button ID="ButtonAccederCliente" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAccederCliente_Click" CausesValidation="false" />
-			</form>
-		</asp:Panel>
+        <!-- Panel para el formulario de inicio de sesión de Cliente -->
+        <asp:Panel ID="panelCliente" CssClass="formulario" runat="server" Visible="false">
+            <h2 class="titulo">Iniciar sesión como Cliente</h2>
+            <form method="post" action="AccesoCliente.aspx">
+                <asp:Literal ID="LiteralMessageCliente" runat="server"></asp:Literal>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtClienteUsuario" CssClass="form-control" runat="server" Placeholder="Usuario"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtClienteContrasenia" TextMode="Password" CssClass="form-control" runat="server" Placeholder="Contraseña"></asp:TextBox>
+                </div>
+                <asp:Button ID="ButtonAccederCliente" CssClass="btn-acceder" runat="server" Text="Acceder" OnClick="ButtonAccederCliente_Click" CausesValidation="false" />
+            </form>
+        </asp:Panel>
 
-		<!-- Panel para el formulario de registro de cliente -->
-		<asp:Panel ID="panelRegistroCliente" CssClass="formulario" runat="server" Visible="true">
-			<h2 class="titulo">Registro del Cliente</h2>
-			<asp:Literal ID="LiteralRegistroMessage" runat="server"></asp:Literal>
-			<div class="mb-3">
-				<asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" Placeholder="Nombre"></asp:TextBox>
-			</div>
-			<div class="mb-3">
-				<asp:TextBox ID="txtApellido" CssClass="form-control" runat="server" Placeholder="Apellido"></asp:TextBox>
-			</div>
-			<div class="mb-3">
-				<asp:TextBox ID="txtEdad" CssClass="form-control" runat="server" Placeholder="Edad"></asp:TextBox>
-			</div>
-			<div class="mb-3">
-				<asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Placeholder="Email"></asp:TextBox>
-			</div>
-			<div class="mb-3">
-				<asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" Placeholder="Dirección"></asp:TextBox>
-			</div>
-			<asp:Button ID="btnRegistrarse" CssClass="btn-registrarse" runat="server" Text="Regístrate" OnClick="btnRegistrarse_Click"/>
-		</asp:Panel>
+        <!-- Panel para el formulario de registro de cliente -->
+        <asp:Panel ID="panelRegistroCliente" CssClass="formulario" runat="server" Visible="true">
+            <h2 class="titulo">Registro del Cliente</h2>
+            <asp:Literal ID="LiteralRegistroMessage" runat="server"></asp:Literal>
+            <div class="mb-3">
+                <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" Placeholder="Nombre"></asp:TextBox>
+            </div>
+            <div class="mb-3">
+                <asp:TextBox ID="txtApellido" CssClass="form-control" runat="server" Placeholder="Apellido"></asp:TextBox>
+            </div>
+            <div class="mb-3">
+                <asp:TextBox ID="txtEdad" CssClass="form-control" runat="server" Placeholder="Edad"></asp:TextBox>
+            </div>
+            <div class="mb-3">
+                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Placeholder="Email"></asp:TextBox>
+            </div>
+            <div class="mb-3">
+                <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server" Placeholder="Dirección"></asp:TextBox>
+            </div>
+            <asp:Button ID="btnRegistrarse" CssClass="btn-registrarse" runat="server" Text="Regístrate" OnClick="btnRegistrarse_Click" />
+        </asp:Panel>
+    </div>
 
     <div class="footer-image"></div>
-		<%--<button class="btn-volver" onclick="volverAtras();">
-			<i class="fas fa-arrow-left"></i>Volver
-		</button>--%>
+    <button class="btn-volver" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i> Volver
+    </button>
 </asp:Content>

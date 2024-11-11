@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
 					<div class="d-flex" action="Buscar.aspx">
 						<input class="form-control me-2 search-bar" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="query">
-						<button class="btn btn-primary me-2" type="submit" formaction="Buscar.aspx">Buscar</button>
+						<asp:Button ID="btnBuscar" runat="server" CssClass="btn btn-primary me-2" Text="Buscar" Enabled="false" PostBackUrl="Buscar.aspx" />
 						<img src="images/Sale30.png" alt="Mid Image" class="mid-image">
 					</div>
                 </div>
